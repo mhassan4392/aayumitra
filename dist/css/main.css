@@ -138,12 +138,14 @@
   background-size: cover;
   background-attachment: fixed;
   padding-top: 25vh; }
+  #showcase .search-col {
+    z-index: 11 !important; }
   #showcase form #location {
     background-image: url("../images/location-icon.svg");
     background-repeat: no-repeat;
     background-position: center left;
     background-size: 15px;
-    background-position-x: 2%;
+    background-position-x: 3%;
     border-radius: 0; }
   #showcase form .input-group-prepend {
     cursor: pointer; }
@@ -153,7 +155,7 @@
     background-image: url("../images/search-icon.png");
     background-repeat: no-repeat;
     background-position: center left;
-    background-size: 15px;
+    background-size: 14px;
     background-position-x: 3%;
     border-radius: 0; }
   #showcase .form-links a {
@@ -165,10 +167,13 @@
   #showcase .form-links span {
     color: #ccc; }
   #showcase .search-menu {
+    z-index: 100;
     display: none;
-    z-index: 10; }
+    position: relative; }
     #showcase .search-menu .search-col-header {
-      color: black; }
+      color: #787887;
+      font-size: 0.8rem;
+      margin-bottom: 10px; }
     #showcase .search-menu li {
       list-style-type: none;
       font-size: 0.9rem; }
@@ -180,8 +185,7 @@
     cursor: pointer; }
 
 #showcase-links {
-  background: #1d2869;
-  z-index: 5; }
+  background: #1d2869; }
   #showcase-links .fa {
     font-size: 0.8rem; }
   #showcase-links p {
@@ -190,7 +194,8 @@
     font-size: 0.8rem; }
   #showcase-links .showcase-box {
     border-right: 1px solid gray;
-    align-items: center; }
+    align-items: center;
+    z-index: 1; }
     #showcase-links .showcase-box .showcase-new {
       border: 1px solid white;
       border-radius: 2px; }
