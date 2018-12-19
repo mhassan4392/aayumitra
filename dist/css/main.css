@@ -1,3 +1,9 @@
+.bg-gray {
+  background: #f0f0f5; }
+
+.line-through {
+  text-decoration: line-through; }
+
 #main-header {
   position: fixed;
   width: 100%;
@@ -183,6 +189,41 @@
           color: #1d2869; }
   #showcase .search-menu-btn {
     cursor: pointer; }
+  #showcase .search-query {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    left: 15px; }
+    #showcase .search-query li {
+      list-style-type: none;
+      border-bottom: 1px solid #787887;
+      padding: 10px;
+      cursor: pointer; }
+      #showcase .search-query li:hover {
+        background: #eee; }
+      #showcase .search-query li .fa {
+        background: #e1e1e1;
+        padding: 10px;
+        font-size: 0.8rem;
+        border-radius: 50%; }
+  #showcase .address-book {
+    position: absolute;
+    width: 100%;
+    left: 15px; }
+    #showcase .address-book li {
+      list-style-type: none;
+      border-bottom: 1px solid #787887;
+      padding: 10px; }
+    #showcase .address-book .fa {
+      background: #e1e1e1;
+      padding: 10px;
+      font-size: 0.8rem;
+      border-radius: 50%; }
+    #showcase .address-book .search-result {
+      cursor: pointer; }
+      #showcase .address-book .search-result:hover {
+        background: #eee; }
 
 #showcase-links {
   background: #1d2869; }
@@ -442,12 +483,3 @@
 body {
   color: #414146;
   font-family: Camphor,verdana; }
-
-.bg-gray {
-  background: #f0f0f5; }
-
-#after-nav {
-  margin-top: 200px; }
-
-.line-through {
-  text-decoration: line-through; }

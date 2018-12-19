@@ -23,7 +23,7 @@
   </head>
   <body>
       <!-- Page Content -->
-
+    
       <!-- Main Header -->
       <nav id="main-header">
           <div id="main-header-top" class="bg-light px-4 py-2 ">
@@ -35,7 +35,7 @@
                       <div class="col-md-9 second-col d-flex align-items-center">
                           <div class="header-top-links text-right">
                               <li >
-                                <a class="active-link" href="#" >Book appointment</a>
+                                <a class="active-link" href="#" >Book Appointment</a>
                               </li>
                               <li>
                                 <a href="#">Chat with a doctor</a>
@@ -72,7 +72,7 @@
                       <i class="fa fa-bars fa-2x menu-btn mr-3"></i> 
                       <div class="logo">
                         <a href="#" id="main-logo">
-                          <img class="img-fluid" src="images/logo.png" alt="">
+                          <img class="img-fluid" src="images/logo-white.png" alt="">
                         </a>
                       </div>
                     </div>
@@ -137,12 +137,33 @@
                       <div class="input-group">
                           <input type="text" id="location" class="form-control py-2 pl-5" placeholder="Enter Address">
                           <div class="input-group-prepend">
-                              <div class="input-group-text"><i class="fa fa-location-arrow pr-2"></i>  Detect</div>
+                              <div class="input-group-text detect-location-btn"><i class="fa fa-location-arrow pr-2"></i>  Detect</div>
                             </div>
                       </div>
+                      <div class="row address-book">
+                        <div class="col-md-12 p-0 address-book-ul">
+                          <!-- <ul class="search-addresses mt-1 bg-white">
+                            <li class="formate">hello to the future</li>
+                            <li>hello to the future</li>
+                            <li>hello to the future</li>
+                          </ul> -->
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-lg-7 m-0 p-0">
-                      <input type="text" id="search" class="form-control py-2 pl-5" placeholder="Search Doctors , Clinics , Hospitals etc">
+                    <div class="col-lg-7 m-0 p-0 search-input-form">
+                      <input type="text" id="search" class="form-control py-2 pl-5 search-input" placeholder="Search Doctors , Clinics , Hospitals etc">
+                      <div class="row search-query">
+                          <div class="col-md-12 p-0">
+                            <ul class="mt-1 bg-white">
+                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Dentist</li>
+                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp Gynecologist/Obstretrician</li>
+                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  General Physician</li>
+                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Dermatologist</li>
+                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Homeopath</li>
+                              
+                            </ul>
+                          </div>
+                        </div>
                     </div>
                   </div>
                 </form>
@@ -550,34 +571,40 @@
                   </div>
               </div>
 
-              <div class="row appointment-brands">
+              <div class="row appointment-brands py-5">
                 <div class="conl-md-10 mx-auto d-flex align-items-center">
-                  <div class=" mr-2">
+                  <div class=" mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/fortune.png" alt="">
                     </a>
                   </div>
-                  <div class="mr-2">
+                  <div class="mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/tech crunch.png" alt="">
                     </a>
                   </div>
-                  <div class="mr-2">
+                  <div class="mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/forbes.png" alt="">
                     </a>
                   </div>
-                  <div class="mr-2">
+                  <div class="mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/the economic times.png" alt="">
                     </a>
                   </div>
-                  <div class="mr-2">
+                  <div class="mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/the wall street journal.png" alt="">
                     </a>
                   </div>
-                  <div class="mr-2">
+                  <div class="mx-2 appointment-brands-box">
+                    
                     <a href="#">
                       <img class="img-fluid" src="images/times of india.png" alt="">
                     </a>
@@ -1136,7 +1163,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDV6oZr1A0Gos6DiXjBY3vHxhVXS7mCwB8&sensor=false&v=3&libraries=geometry"></script>
     <script src="js/main.js"></script>
+
   </body>
 </html>

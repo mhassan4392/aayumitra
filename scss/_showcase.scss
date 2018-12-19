@@ -55,12 +55,6 @@
         z-index: 100;
         display: none;
         position: relative;
-        // width: 80%;
-        
-
-        .search-menu-col{
-            
-        }
 
         .search-col-header{
             color: $secondary-clr;
@@ -85,6 +79,60 @@
     }
     .search-menu-btn{
         cursor: pointer;
+    }
+
+    .search-query{
+        display: none;
+        z-index: 100;
+        position: absolute;
+        width: 100%;
+        left: 15px;
+
+        li{
+            list-style-type: none;
+            border-bottom: 1px solid $secondary-clr;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover{
+                background: #eee;
+            }
+
+            .fa{
+                background: darken(#eee, 5);
+                padding: 10px;
+                font-size: 0.8rem;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .address-book{
+        position: absolute;
+        width: 100%;
+        left: 15px;
+        
+        li{
+            list-style-type: none;
+            border-bottom: 1px solid $secondary-clr;
+            padding: 10px;
+
+            
+        }
+        .fa{
+            background: darken(#eee, 5);
+            padding: 10px;
+            font-size: 0.8rem;
+            border-radius: 50%;
+        }
+
+        .search-result{
+            cursor: pointer;
+
+            &:hover{
+                background: #eee;
+            }
+        }
     }
 }
 

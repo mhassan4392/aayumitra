@@ -30,6 +30,98 @@ function showSearchMenu(){
   angleDown.classList.toggle('fa-angle-up');
 }
 
+// get users position longitude and latitude
+
+var getLoc = document.querySelector('.detect-location-btn');
+getLoc.addEventListener('click', getLocation);
+
+var locationInput = document.querySelector('#location');
+
+function getLocation(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+  
+        //GET USER CURRENT LOCATION
+        var locCurrent = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  
+        //CHECK IF THE USERS GEOLOCATION IS IN AUSTRALIA
+        var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': locCurrent }, function (results, status) {
+                var locItemCount = results.length;
+                var locCountryNameCount = locItemCount - 1;
+                var locCountryName = results[locCountryNameCount].formatted_address;      
+              locationInput.value = locCountryName;             
+        });
+    })
+  }
+}
+
+// geo code function to get location when user enter the location in form
+
+locationInput.addEventListener('keyup', geocode);
+
+var addressbook = document.querySelector('.address-book-ul');
+
+function geocode(){
+  var mylocation = locationInput.value;
+  axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+    params:{
+      address: mylocation,
+      key:'AIzaSyCfI7seM5_y_nqqccFrcHoNVdag0tW6dIY'
+    }
+  })
+  .then(function(response){
+
+    
+    var results = response.data.results;
+    var ul = '<ul class="search-addresses mt-1 bg-white">';
+    for(i=0; i<results.length; i++){
+      ul += `
+      <li class="search-result"> ${results[i].formatted_address}</li>
+      `;
+    }
+
+    ul += '</ul>';
+
+    addressbook.innerHTML = ul;
+
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+}
+
+addressbook.addEventListener('click', getSearchResult);
+
+    function getSearchResult(e){
+      if(e.target.classList.contains('search-result')){
+        locationInput.value = e.target.innerHTML;
+      }
+    }
+
+
+    // show search query results
+
+var searchInput = document.querySelector('#search');
+var searchQuery = document.querySelector('.search-query');
+var searchInputForm = document.querySelector('.search-input-form')
+searchInput.addEventListener('focus', function(){
+  searchQuery.classList.add('d-block');
+});
+
+searchInput.addEventListener('blur', function(){
+  searchQuery.classList.remove('d-block');
+});
+
+searchInputForm.addEventListener('click', function(e){
+  if(e.target.classList.contains('search-query-result')){
+    searchInput.value = e.target.innerHTML;
+  }
+});
+
+
+// swiper for latest posts
+
 var size = {
   width: window.innerWidth || document.body.clientWidth,
 }
