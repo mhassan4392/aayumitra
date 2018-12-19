@@ -1,0 +1,123 @@
+#showcase{
+    
+    background: url('../images/homepage.06859593240c3efd483fe48951cfe6ff.svg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 25vh;
+
+    form{
+        #location{
+            background-image: url('../images/location-icon.svg');
+            background-repeat: no-repeat;
+            background-position: center left;
+            background-size: 15px;
+            background-position-x: 2%;
+            border-radius:0;
+        }
+        .input-group-prepend{
+            cursor: pointer;
+
+            .input-group-text{
+                font-size: 0.8rem;
+            }
+        }
+
+        #search{
+            background-image: url('../images/search-icon.png');
+            background-repeat: no-repeat;
+            background-position: center left;
+            background-size: 15px;
+            background-position-x: 3%;
+            border-radius: 0;
+        }
+    }
+
+    .form-links{
+        a{
+            color: #ccc;
+            margin: 0 10px;
+            font-size: 0.8rem;
+
+            &:hover{
+                color: white;
+            }
+        }
+        span{
+            color: #ccc;
+        }
+    }
+
+    .search-menu{
+        display: none;
+        z-index: 10;
+
+        .search-col-header{
+            color: black;
+
+        }
+
+        li{
+            list-style-type: none;
+            font-size: 0.9rem;
+
+            a{
+                color: $link-clr;
+
+                &:hover{
+                    color: $link-hover-darker-clr;
+                }
+            }
+        }
+    }
+    .search-menu-btn{
+        cursor: pointer;
+    }
+}
+
+#showcase-links{
+    
+    background: $link-hover-darker-clr;
+    z-index: 5;
+
+    .fa{
+        font-size: 0.8rem;
+        
+    }
+    p{
+        padding: 0;
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    .showcase-box{
+        border-right: 1px solid gray;
+        align-items: center;
+
+        .showcase-new{
+            border: 1px solid white;
+            border-radius: 2px;
+        }
+
+        .fa{
+            font-size: 1.1rem;
+        }
+
+        &:last-child{
+            border: none;
+        }
+
+        a{
+            color: #ccc;
+
+            &:hover{
+                color: white;
+                text-decoration: none;
+
+                .fa{
+                    font-size: 1.3rem;
+                    transition: all 0.2s ease-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+#checkup-section{
+
+    .card-header{
+        background: url('../images/circles.svg') no-repeat top right;
+        background-color: $blue-dark-clr;
+        color: white;
+        
+    }
+
+    .card-body{
+        .second-col{
+            font-size: 0.9rem;
+
+            li{
+                list-style-type: circle;
+            }
+
+            
+
+        }
+    }
+
+    .card-footer{
+        .checkup-price{
+            font-size: 1.3rem;
+        }
+    }
+
+    .fa{
+        font-size: 0.7rem;
+        padding: 5px;
+        border: 0.5px solid gray;
+        border-radius: 50%;
+    }
+}

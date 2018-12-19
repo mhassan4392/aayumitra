@@ -1,0 +1,29 @@
+#flags-section{
+
+    overflow: hidden;
+    
+    .flag-box{
+
+        a{
+            color: $link-clr;
+            text-decoration: none;
+
+            &:visited{
+                color: $link-clr;
+                text-decoration: none;
+            }
+            &:hover{
+                color: $link-clr;
+                text-decoration: none;
+            }
+
+            .flag-name{
+                font-size: 0.8rem;
+            }
+        }
+
+        .flag-img{
+            width: 30px;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+#main-footer{
+    background: $blue-dark-clr;
+    h1{
+        width: 300px;
+        margin: 20px auto;
+    }
+    .footer-col-header{
+        margin-bottom: 15px;
+    }
+    li{
+        list-style-type: none;
+        font-size: 0.9rem;
+
+        a{
+            color: white;
+
+            &:hover{
+                color: white;
+                
+            }
+        }
+    }
+
+    .footer-col-header{
+        font-size: 0.9rem;
+    }
+
+}

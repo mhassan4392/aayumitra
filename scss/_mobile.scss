@@ -1,0 +1,66 @@
+@include mediaSm{
+
+    #showcase{
+        height: 100vh;
+    }
+
+    #showcase-links{
+        height: 80vh;
+        .showcase-box{
+            border: none;
+        }
+    }
+}
+
+
+@include mediaMd{
+    // main header top
+    #main-header-top{
+        display: none;
+    }
+
+    // main header top
+    #main-header-bottom{
+        .header-bottom-links{
+            display: none;
+        }
+        .menu-btn{
+            display: block;
+        }
+    }
+
+    #showcase{
+        height: 100vh;
+    }
+
+    #showcase-links{
+        height: 55vh;
+        .showcase-box{
+            margin: 20px 0;
+            &:nth-child(3n){
+                border: none;
+            }
+        }
+    }
+}
+
+
+@include mediaLg{
+
+    .menu-btn{
+        display: none;
+    }
+
+    #showcase{
+        height: 85vh;
+    }
+    #showcase-links{
+        height: 20vh;
+    }
+}
+
+
+
+
+@include mediaXl{
+}

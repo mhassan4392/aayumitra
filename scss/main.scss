@@ -1,0 +1,42 @@
+@import 'config';
+@import 'custom-classes';
+@import 'header';
+@import 'showcase';
+@import 'checkup';
+@import 'latest-posts';
+@import 'data-safety';
+@import 'appointment';
+@import 'chat';
+@import 'get-medicines';
+@import 'medical-records';
+@import 'healthcare-providers';
+@import 'download-app';
+@import 'testimonials';
+@import 'flags';
+@import 'footer';
+@import 'mobile';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  color: #414146;
+  font-family: Camphor,verdana
+}
+
+.bg-gray{
+  background: $gray-color;
+}
+
+#after-nav{
+    margin-top:200px;
+}
+
+.line-through{
+    text-decoration: line-through;
+}
+
+
