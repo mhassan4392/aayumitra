@@ -156,7 +156,8 @@
   #showcase form .input-group-prepend {
     cursor: pointer; }
     #showcase form .input-group-prepend .input-group-text {
-      font-size: 0.8rem; }
+      font-size: 0.8rem;
+      text-align: center; }
   #showcase form #search {
     background-image: url("../images/search-icon.png");
     background-repeat: no-repeat;
@@ -189,40 +190,57 @@
           color: #1d2869; }
   #showcase .search-menu-btn {
     cursor: pointer; }
-  #showcase .search-query {
+  #showcase .search-results {
     display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
     z-index: 100;
-    position: absolute;
-    width: 100%;
-    left: 15px; }
-    #showcase .search-query li {
+    font-size: 0.8rem; }
+    #showcase .search-results .search-results-ul .popular-search-div div {
+      border-radius: 20px; }
+      #showcase .search-results .search-results-ul .popular-search-div div .fa {
+        background: none; }
+    #showcase .search-results .search-results-ul .popular-search-div:hover {
+      background: white; }
+    #showcase .search-results .search-results-ul div {
+      padding: 0 15px;
+      border-bottom: 1px solid #eee; }
+      #showcase .search-results .search-results-ul div:hover {
+        background: #eee;
+        cursor: pointer; }
+    #showcase .search-results .search-results-ul li {
       list-style-type: none;
-      border-bottom: 1px solid #787887;
       padding: 10px;
-      cursor: pointer; }
-      #showcase .search-query li:hover {
-        background: #eee; }
-      #showcase .search-query li .fa {
-        background: #e1e1e1;
-        padding: 10px;
-        font-size: 0.8rem;
-        border-radius: 50%; }
-  #showcase .address-book {
-    position: absolute;
-    width: 100%;
-    left: 15px; }
-    #showcase .address-book li {
-      list-style-type: none;
-      border-bottom: 1px solid #787887;
-      padding: 10px; }
-    #showcase .address-book .fa {
-      background: #e1e1e1;
+      width: 100%; }
+    #showcase .search-results .search-results-ul .fa {
+      background: #eee;
       padding: 10px;
       font-size: 0.8rem;
       border-radius: 50%; }
-    #showcase .address-book .search-result {
+  #showcase .location-results {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 101;
+    font-size: 0.8rem; }
+    #showcase .location-results .location-results-ul div {
+      padding: 0 10px; }
+      #showcase .location-results .location-results-ul div:hover {
+        background: #eee;
+        cursor: pointer; }
+    #showcase .location-results li {
+      list-style-type: none;
+      padding: 10px;
+      width: 100%; }
+    #showcase .location-results .fa {
+      background: #eee;
+      padding: 10px;
+      font-size: 0.8rem;
+      border-radius: 50%; }
+    #showcase .location-results .search-result {
       cursor: pointer; }
-      #showcase .address-book .search-result:hover {
+      #showcase .location-results .search-result:hover {
         background: #eee; }
 
 #showcase-links {

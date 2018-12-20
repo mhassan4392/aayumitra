@@ -20,9 +20,12 @@
         }
         .input-group-prepend{
             cursor: pointer;
+            
 
             .input-group-text{
                 font-size: 0.8rem;
+                text-align: center;
+
             }
         }
 
@@ -81,46 +84,93 @@
         cursor: pointer;
     }
 
-    .search-query{
+    .search-results{
         display: none;
-        z-index: 100;
         position: absolute;
         width: 100%;
-        left: 15px;
+        left: 0;
+        z-index: 100;
+        font-size: 0.8rem;
 
-        li{
-            list-style-type: none;
-            border-bottom: 1px solid $secondary-clr;
-            padding: 10px;
-            cursor: pointer;
+        .search-results-ul{
 
-            &:hover{
-                background: #eee;
+            .popular-search-div{
+
+                div{
+                    border-radius: 20px;
+
+                    .fa{
+                        background: none;
+                    }
+                }
+
+                &:hover{
+                    background: white;
+                }
+            }
+            
+            div{
+                padding: 0 15px;
+                border-bottom: 1px solid #eee;
+                &:hover{
+                    background: #eee;
+                    cursor: pointer;
+                }
+
+            }
+
+            li{
+                list-style-type: none;
+                padding: 10px;
+                width: 100%;
+                
+    
+                
             }
 
             .fa{
-                background: darken(#eee, 5);
+                background: #eee;
                 padding: 10px;
                 font-size: 0.8rem;
-                border-radius: 50%;
+                border-radius: 50%; 
             }
         }
     }
 
-    .address-book{
+    
+
+    // Location Input
+
+    .location-results{
         position: absolute;
         width: 100%;
-        left: 15px;
+        left: 0;
+        z-index: 101;
+        font-size: 0.8rem;
+
+        .location-results-ul{
+
+            div{
+                padding: 0 10px;
+                
+                &:hover{
+                    background: #eee;
+                    cursor: pointer;
+                }
+
+                
+            }
+        }
         
         li{
             list-style-type: none;
-            border-bottom: 1px solid $secondary-clr;
             padding: 10px;
+            width: 100%;
 
             
         }
         .fa{
-            background: darken(#eee, 5);
+            background: #eee;
             padding: 10px;
             font-size: 0.8rem;
             border-radius: 50%;

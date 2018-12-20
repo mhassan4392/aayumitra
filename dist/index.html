@@ -131,41 +131,78 @@
             <div class="container">
               <div class="col-md-9 mx-auto">
                 <h3 class="text-center text-white">Find and Book</h3>
-                <form action="#">
+                <form action="">
                   <div class="form-row ">
                     <div class="col-lg-5 m-0 p-0">
                       <div class="input-group">
-                          <input type="text" id="location" class="form-control py-2 pl-5" placeholder="Enter Address">
+                          <input type="text" id="location" class="location-input form-control py-2 pl-5" placeholder="Enter Address">
                           <div class="input-group-prepend">
-                              <div class="input-group-text detect-location-btn"><i class="fa fa-location-arrow pr-2"></i>  Detect</div>
+                              <div class="input-group-text detect-location-btn"><i class="fa fa-location-arrow pr-2"></i> Detect</div>
                             </div>
                       </div>
-                      <div class="row address-book">
-                        <div class="col-md-12 p-0 address-book-ul">
-                          <!-- <ul class="search-addresses mt-1 bg-white">
-                            <li class="formate">hello to the future</li>
-                            <li>hello to the future</li>
-                            <li>hello to the future</li>
-                          </ul> -->
+                      <div class="row">
+                        <div class="col-md-12 p-0 location-results d-none">
+                          <!-- Locations are show here form main.js -->
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-7 m-0 p-0 search-input-form">
+                    <div class="col-lg-7 m-0 p-0">
                       <input type="text" id="search" class="form-control py-2 pl-5 search-input" placeholder="Search Doctors , Clinics , Hospitals etc">
-                      <div class="row search-query">
-                          <div class="col-md-12 p-0">
-                            <ul class="mt-1 bg-white">
-                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Dentist</li>
-                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp Gynecologist/Obstretrician</li>
-                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  General Physician</li>
-                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Dermatologist</li>
-                              <li class="search-query-result"><i class="fa fa-search"></i>&nbsp; &nbsp;  Homeopath</li>
-                              
-                            </ul>
-                          </div>
+                      <div class="row">
+                          <div class="col-md-12 p-0 search-results mt-1 bg-white">
+                              <ul class="search-results-ul">
+                                <div class="bg-gray py-1 px-3 mb-2">
+                                  <small>Popular Searches</small>
+                                </div>
+                                <div class="d-flex align-items-center popular-search-div justify-content-between px-3 py-2">
+                                    <div class="d-flex bg-gray align-items-center">
+                                        <i class="fa fa-bolt"></i>
+                                        <div class="search-query-result">Hesterectomy</div>
+                                    </div>
+                                    <div class="d-flex align-items-center bg-gray">
+                                        <i class="fa fa-bolt"></i>
+                                        <div class="search-query-result float-right">Normal Delivery</div>
+                                    </div>
+                                  </div>
+                                <div class="bg-gray py-1 px-3 mb-2">
+                                    <small>Common Specialities</small>
+                                  </div>
+                                <div class="d-flex align-items-center">
+                                  <i class="fa fa-search"></i>
+                                  <li class="search-query-result">Dentist</li>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa fa-search"></i>
+                                    <li class="search-query-result">Gynecologist/Obstretrician</li>
+                                  </div>
+                                  <div class="d-flex align-items-center">
+                                      <i class="fa fa-search"></i>
+                                      <li class="search-query-result">General Physician</li>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa fa-search"></i>
+                                        <li class="search-query-result">Dermatologist</li>
+                                      </div>
+                                      <div class="d-flex align-items-center">
+                                          <i class="fa fa-search"></i>
+                                          <li class="search-query-result">Homeopath</li>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa fa-search"></i>
+                                            <li class="search-query-result">Ear-Nose-Throat (ENT) Specailist</li>
+                                          </div>
+                                          <div class="d-flex align-items-center">
+                                              <i class="fa fa-search"></i>
+                                              <li class="search-query-result">Ayurveda</li>
+                                            </div>
+                                            
+                              </ul>
+                            </div>
                         </div>
                     </div>
                   </div>
+
+                  <input type="submit" class="d-none" value="">
                 </form>
 
                 <div class="form-links py-2">
@@ -181,7 +218,7 @@
                     <div class="row">
                       <div class="col-md-9 search-menu-col bg-white mx-auto">
                         <div class="row">
-                      <div class="col-md-3 col-6 p-3">
+                      <div class="col-md-3 search-cols col-6 p-3">
                         <div class="search-col-header"><b>General Physicians and Specialists</b></div>
                         <ul>
                           <li><a href="#">Opthalmologist</a></li>
@@ -196,7 +233,7 @@
                         </ul>
                       </div>
 
-                      <div class="col-md-3 col-6 p-3">
+                      <div class="col-md-3 search-cols col-6 p-3">
                         <div class="search-col-header"><b>Dentists</b></div>
                         <ul>
                           <li><a href="#">Prosthodentist</a></li>
@@ -208,7 +245,7 @@
                       </div>
 
                     
-                      <div class="col-md-3 col-6 p-3 bg-white">
+                      <div class="col-md-3 search-cols col-6 p-3 bg-white">
                         <div class="search-col-header "><b>Therapists & Nutritionists</b></div>
                         <ul>
                           <li><a href="#">Acupuncturist</a></li>
@@ -221,7 +258,7 @@
                       </div>
 
                     
-                      <div class="col-md-3 col-6 p-3 bg-white search-col">
+                      <div class="col-md-3 search-cols col-6 p-3 bg-white search-col m-0">
                         <div class="search-col-header"><b> Alternative Medicine Practitioners</b></div>
                         <ul>
                           <li><a href="#">Ayurveda</a></li>
