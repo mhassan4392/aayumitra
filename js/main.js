@@ -48,9 +48,13 @@ function getLocation(){
         var geocoder = new google.maps.Geocoder();
             geocoder.geocode({ 'latLng': locCurrent }, function (results, status) {
                 var locItemCount = results.length;
+                console.log(results);
                 var locCountryNameCount = locItemCount - 1;
+                var locProvinceNameCount = locItemCount - 2;
+                var locCityNameCount = locItemCount - 3;
                 var locCountryName = results[locCountryNameCount].formatted_address;      
-              locationInput.value = locCountryName;             
+              locationInput.value = locCountryName; 
+              locationResults.classList.remove('d-block');            
         });
     })
   }
@@ -60,64 +64,105 @@ function getLocation(){
 
 locationInput.addEventListener('keyup', geocode);
 
-var addressbook = document.querySelector('.address-book-ul');
+var locationResults = document.querySelector('.location-results');
+var searchResults = document.querySelector('.search-results');
 
 function geocode(){
-  var mylocation = locationInput.value;
-  axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+  var userLoc = locationInput.value;
+  if(userLoc != ''){
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
     params:{
-      address: mylocation,
+      address: userLoc,
       key:'AIzaSyCfI7seM5_y_nqqccFrcHoNVdag0tW6dIY'
     }
   })
   .then(function(response){
-
-    
     var results = response.data.results;
-    var ul = '<ul class="search-addresses mt-1 bg-white">';
+    var ul = '<ul class="location-results-ul mt-1 bg-white">';
     for(i=0; i<results.length; i++){
       ul += `
-      <li class="search-result"> ${results[i].formatted_address}</li>
+      <div class="d-flex align-items-center">
+      <i class="fa fa-search"></i>
+      <li class="search-result">${results[i].formatted_address}</li>
+      </div>
       `;
     }
 
     ul += '</ul>';
 
-    addressbook.innerHTML = ul;
+    locationResults.innerHTML = ul;
+
+    locationResults.classList.add('d-block');
 
   })
   .catch(function(err){
     console.log(err);
   })
+  }else{
+    locationResults.classList.remove('d-block');
+  }
 }
 
-addressbook.addEventListener('click', getSearchResult);
 
-    function getSearchResult(e){
+//show search query results
+
+var searchInput = document.querySelector('.search-input');
+var searchReuslts = document.querySelector('.search-results');
+var form = document.querySelector('form');
+
+searchInput.addEventListener('focus', function(){
+  searchReuslts.classList.add('d-block');
+});
+
+locationResults.addEventListener('click', getLocationResult);
+
+    function getLocationResult(e){
       if(e.target.classList.contains('search-result')){
         locationInput.value = e.target.innerHTML;
+        locationResults.classList.remove('d-block');
+        // searchReuslts.classList.add('d-block');
+        // searchInput.focus();
       }
-    }
+}
 
+searchResults.addEventListener('click', getSearchResult);
 
-    // show search query results
-
-var searchInput = document.querySelector('#search');
-var searchQuery = document.querySelector('.search-query');
-var searchInputForm = document.querySelector('.search-input-form')
-searchInput.addEventListener('focus', function(){
-  searchQuery.classList.add('d-block');
-});
-
-searchInput.addEventListener('blur', function(){
-  searchQuery.classList.remove('d-block');
-});
-
-searchInputForm.addEventListener('click', function(e){
+function getSearchResult(e){
   if(e.target.classList.contains('search-query-result')){
     searchInput.value = e.target.innerHTML;
+    searchResults.classList.remove('d-block');
+    form.submit();
+
   }
-});
+}
+
+
+
+
+
+var page = document.querySelector('body');
+
+page.addEventListener('click', searchFunc);
+
+function searchFunc(e){
+  
+  if(!e.target.classList.contains('search-query-result') && !e.target.classList.contains('search-input')){
+    searchReuslts.classList.remove('d-block');
+  }
+  if(!e.target.classList.contains('search-result') && !e.target.classList.contains('location-input')){
+    locationResults.classList.remove('d-block');
+  }
+
+  if(!e.target.classList.contains('search-menu-btn') && !e.target.classList.contains('search-menu') && !e.target.classList.contains('search-menu-col') && !e.target.classList.contains('search-cols') && !e.target.classList.contains('search-col-header')) {
+    searchMenu.classList.remove('d-block');
+  angleDown.classList.remove('fa-angle-up');
+  }
+
+
+
+  
+}
+
 
 
 // swiper for latest posts
