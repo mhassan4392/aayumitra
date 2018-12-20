@@ -10,6 +10,15 @@
             border: none;
         }
     }
+
+    .appointment-brands{
+        .d-grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 1rem;
+        }
+    }
+    
 }
 
 
@@ -42,6 +51,14 @@
             }
         }
     }
+
+    .appointment-brands{
+        .d-grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 1rem;
+        }
+    }
 }
 
 
@@ -56,6 +73,14 @@
     }
     #showcase-links{
         height: 20vh;
+    }
+
+    .appointment-brands{
+        .d-grid{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-gap: 1rem;
+        }
     }
 }
 

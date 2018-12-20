@@ -53,8 +53,18 @@ function getLocation(){
                 var locProvinceNameCount = locItemCount - 2;
                 var locCityNameCount = locItemCount - 3;
                 var locCountryName = results[locCountryNameCount].formatted_address;      
-              locationInput.value = locCountryName; 
-              locationResults.classList.remove('d-block');            
+                var locCityName = results[locCityNameCount].formatted_address;      
+              if(locCityNameCount){
+                locationInput.value = locCityName;
+                locationResults.classList.remove('d-block');
+                return;
+              } 
+              if(locCountryNameCount){
+                locationInput.value = locCountryName;
+                locationResults.classList.remove('d-block');
+                return;
+              }
+                          
         });
     })
   }

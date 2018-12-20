@@ -467,7 +467,11 @@
   #showcase-links {
     height: 80vh; }
     #showcase-links .showcase-box {
-      border: none; } }
+      border: none; }
+  .appointment-brands .d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem; } }
 
 @media screen and (max-width: 768px) {
   #main-header-top {
@@ -483,7 +487,11 @@
     #showcase-links .showcase-box {
       margin: 20px 0; }
       #showcase-links .showcase-box:nth-child(3n) {
-        border: none; } }
+        border: none; }
+  .appointment-brands .d-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem; } }
 
 @media screen and (min-width: 769px) {
   .menu-btn {
@@ -491,7 +499,11 @@
   #showcase {
     height: 85vh; }
   #showcase-links {
-    height: 20vh; } }
+    height: 20vh; }
+  .appointment-brands .d-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem; } }
 
 * {
   margin: 0;
