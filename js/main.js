@@ -48,7 +48,6 @@ function getLocation(){
         var geocoder = new google.maps.Geocoder();
             geocoder.geocode({ 'latLng': locCurrent }, function (results, status) {
                 var locItemCount = results.length;
-                console.log(results);
                 var locCountryNameCount = locItemCount - 1;
                 var locProvinceNameCount = locItemCount - 2;
                 var locCityNameCount = locItemCount - 3;
@@ -168,10 +167,33 @@ function searchFunc(e){
   angleDown.classList.remove('fa-angle-up');
   }
 
-
-
-  
 }
+
+
+// jquer function to get user location without gps
+
+// $(document).ready(function () {
+//   $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
+// var city = JSON.stringify(data.geobytescity, null, 2);
+// var country = JSON.stringify(data.geobytescountry, null, 2);
+// var country = JSON.stringify(data.geobytescountry, null, 2);
+
+// var city = city.replace(/"/g, "");
+// var country = country.replace(/"/g, "");  
+// var address = city + ' , ' + country;
+
+
+//   // var country =
+
+// $('#location').val(address);
+ 
+// });
+// });
+
+$.get("http://ipinfo.io", function(response) {
+    var address = response.city + ' , ' + response.region +' , ' + response.country;
+    $('#location').val(address);
+}, "jsonp");
 
 
 
