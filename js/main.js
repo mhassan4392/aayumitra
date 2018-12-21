@@ -190,7 +190,7 @@ function searchFunc(e){
 // });
 // });
 
-$.get("http://ipinfo.io", function(response) {
+$.get("https://ipinfo.io", function(response) {
     var address = response.city + ' , ' + response.region +' , ' + response.country;
     $('#location').val(address);
 }, "jsonp");
