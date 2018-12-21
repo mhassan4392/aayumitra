@@ -191,8 +191,7 @@ function searchFunc(e){
 // });
 
 $.get("http://ipinfo.io", function(response) {
-    console.log(response.city, response.country);
-    var address = response.city + ',' + response.country;
+    var address = response.city + ' , ' + response.region +' , ' + response.country;
     $('#location').val(address);
 }, "jsonp");
 
