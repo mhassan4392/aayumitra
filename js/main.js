@@ -147,21 +147,22 @@ function getSearchResult(e){
 
 
 
-
-
+// function for search form when the user click outside of input then search menu and location menu and others menu desappears
 var page = document.querySelector('body');
 
 page.addEventListener('click', searchFunc);
 
 function searchFunc(e){
   
+  // search menu disappear
   if(!e.target.classList.contains('search-query-result') && !e.target.classList.contains('search-input')){
     searchReuslts.classList.remove('d-block');
   }
+  // location menu disappear
   if(!e.target.classList.contains('search-result') && !e.target.classList.contains('location-input')){
     locationResults.classList.remove('d-block');
   }
-
+  // others menu disappear
   if(!e.target.classList.contains('search-menu-btn') && !e.target.classList.contains('search-menu') && !e.target.classList.contains('search-menu-col') && !e.target.classList.contains('search-cols') && !e.target.classList.contains('search-col-header')) {
     searchMenu.classList.remove('d-block');
   angleDown.classList.remove('fa-angle-up');
@@ -170,28 +171,9 @@ function searchFunc(e){
 }
 
 
-// jquer function to get user location without gps
-
-// $(document).ready(function () {
-//   $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
-// var city = JSON.stringify(data.geobytescity, null, 2);
-// var country = JSON.stringify(data.geobytescountry, null, 2);
-// var country = JSON.stringify(data.geobytescountry, null, 2);
-
-// var city = city.replace(/"/g, "");
-// var country = country.replace(/"/g, "");  
-// var address = city + ' , ' + country;
-
-
-//   // var country =
-
-// $('#location').val(address);
- 
-// });
-// });
-
+// jquery function to get user location without gps
 $.get("https://ipinfo.io", function(response) {
-    var address = response.city + ' , ' + response.region +' , ' + response.country;
+    var address = response.city + ', ' + response.region +', ' + response.country;
     $('#location').val(address);
 }, "jsonp");
 
@@ -199,6 +181,7 @@ $.get("https://ipinfo.io", function(response) {
 
 // swiper for latest posts
 
+// check width of the document and then set the swipper cols
 var size = {
   width: window.innerWidth || document.body.clientWidth,
 }
@@ -231,7 +214,6 @@ var swiper = new Swiper('.swiper-container', {
 
 
 // first slider
-
 let sliderImages = document.querySelectorAll(".slide"),
   arrowLeft = document.querySelector(".arrow1"),
   arrowRight = document.querySelector(".arrow2"),
@@ -284,14 +266,11 @@ startSlide();
 
 
 
-
 // chat slider
-
 var chatslider = chatsliderImages = document.querySelectorAll(".chat-slide"),
 chatarrowLeft = document.querySelector(".chat-arrow1"),
 chatarrowRight = document.querySelector(".chat-arrow2"),
 chatcurrent = 0;
-
 
 // Clear all images
 function chatreset() {
@@ -341,12 +320,10 @@ chatstartSlide();
 
 
 // medicines slider
-
 var medicineslider = medicinesliderImages = document.querySelectorAll(".medicine-slide"),
 medicinearrowLeft = document.querySelector(".medicine-arrow1"),
 medicinearrowRight = document.querySelector(".medicine-arrow2"),
 medicinecurrent = 0;
-
 
 // Clear all images
 function medicinereset() {
@@ -395,15 +372,11 @@ medicinestartSlide();
 
 
 
-
-
 // healthcare slider
-
 var healthcareslider = healthcaresliderImages = document.querySelectorAll(".healthcare-slide"),
 healthcarearrowLeft = document.querySelector(".healthcare-arrow1"),
 healthcarearrowRight = document.querySelector(".healthcare-arrow2"),
 healthcarecurrent = 0;
-
 
 // Clear all images
 function healthcarereset() {
