@@ -145,6 +145,8 @@
   background-size: cover;
   background-attachment: fixed;
   padding-top: 25vh; }
+  #showcase .container {
+    z-index: 100; }
   #showcase::after {
     content: '';
     position: absolute;

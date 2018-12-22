@@ -1,5 +1,8 @@
 #showcase{
     position: relative;
+    .container{
+        z-index: 100;
+    }
     &::after{
         content: '';
         position: absolute;
@@ -20,6 +23,7 @@
     padding-top: 25vh;
 
     form{
+        
         #location{
             background-image: url('../images/location-icon.svg');
             background-repeat: no-repeat;
