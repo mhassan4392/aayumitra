@@ -1,0 +1,103 @@
+#accounts-form{
+padding-top: 25vh;
+color: $secondary-clr;
+
+    #facebook-btn{
+        background: #3B5998;
+        color: white;
+    }
+
+
+    label{
+        font-size: 0.9rem;
+        color: $secondary-clr;
+        padding-bottom: 5px 0;
+    }
+
+    input{
+
+        &::placeholder{
+            color: lighten($secondary-clr, 15);
+        }
+        &:checked{
+            background-color: green;
+        }
+    }
+
+    .forgot-pass{
+        font-size: 0.8rem;
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    li{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        a{
+            padding: 20px 10px;
+            color: $link-clr;
+
+            &.active{
+                border-bottom: 2px solid $link-hover-clr;
+                
+                color: $link-hover-clr !important;
+            }
+            &:visited{
+                color: $link-clr;
+                text-decoration: none;
+
+                &:hover{
+                    color: $link-hover-clr;
+                }
+            }
+        }
+    }
+
+    .hr-container{
+        justify-content: space-between;
+        hr{
+            flex-basis: 40%;
+        }
+        .or{
+            color: $secondary-clr;
+            font-size: 0.8rem;
+        }
+    }
+
+    .fa-facebook{
+        font-size: 1.6rem;
+    }
+    .card-header{
+        padding-bottom: 3px;
+        h6{
+            font-weight: bold;
+        }
+        span{
+            font-size: 0.8rem;
+            color: $secondary-clr;
+            a{
+                color:orange;
+            }
+        }
+    }
+
+    .checkbox-text{
+        font-size: 0.8rem;
+    }
+    .terms-text{
+        font-size: 0.6rem;
+    }
+
+    // .disabled{
+    //     pointer-events: none;
+    // }
+}
+
+.form-img{
+    width: 60%;
+    margin-left: auto;
+}

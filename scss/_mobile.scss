@@ -18,6 +18,10 @@
             grid-gap: 1rem;
         }
     }
+
+    .form-img{
+        display: none;
+    }
     
 }
 
@@ -41,6 +45,9 @@
     #showcase{
         height: 100vh;
     }
+    #accounts-form{
+        padding-top: 20vh;
+    }
 
     #showcase-links{
         height: 55vh;
@@ -58,6 +65,10 @@
             grid-template-columns: repeat(3,1fr);
             grid-gap: 1rem;
         }
+    }
+
+    .form-img{
+        display: none;
     }
 }
 
@@ -80,6 +91,7 @@
             display: flex;
         }
     }
+    
 }
 
 

@@ -9,7 +9,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2; }
+  z-index: 222; }
   #main-header #main-header-top .second-col {
     text-align: right;
     justify-content: flex-end; }
@@ -144,7 +144,7 @@
   background: url("../images/homepage.06859593240c3efd483fe48951cfe6ff.svg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 25vh; }
+  padding-top: 30vh; }
   #showcase .container {
     z-index: 100; }
   #showcase::after {
@@ -456,6 +456,66 @@
   #flags-section .flag-box .flag-img {
     width: 30px; }
 
+#accounts-form {
+  padding-top: 25vh;
+  color: #787887; }
+  #accounts-form #facebook-btn {
+    background: #3B5998;
+    color: white; }
+  #accounts-form label {
+    font-size: 0.9rem;
+    color: #787887;
+    padding-bottom: 5px 0; }
+  #accounts-form input::placeholder {
+    color: #a1a1ab; }
+  #accounts-form input:checked {
+    background-color: green; }
+  #accounts-form .forgot-pass {
+    font-size: 0.8rem; }
+    #accounts-form .forgot-pass:hover {
+      text-decoration: none; }
+  #accounts-form li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+    #accounts-form li a {
+      padding: 20px 10px;
+      color: #414146; }
+      #accounts-form li a.active {
+        border-bottom: 2px solid #28328c;
+        color: #28328c !important; }
+      #accounts-form li a:visited {
+        color: #414146;
+        text-decoration: none; }
+        #accounts-form li a:visited:hover {
+          color: #28328c; }
+  #accounts-form .hr-container {
+    justify-content: space-between; }
+    #accounts-form .hr-container hr {
+      flex-basis: 40%; }
+    #accounts-form .hr-container .or {
+      color: #787887;
+      font-size: 0.8rem; }
+  #accounts-form .fa-facebook {
+    font-size: 1.6rem; }
+  #accounts-form .card-header {
+    padding-bottom: 3px; }
+    #accounts-form .card-header h6 {
+      font-weight: bold; }
+    #accounts-form .card-header span {
+      font-size: 0.8rem;
+      color: #787887; }
+      #accounts-form .card-header span a {
+        color: orange; }
+  #accounts-form .checkbox-text {
+    font-size: 0.8rem; }
+  #accounts-form .terms-text {
+    font-size: 0.6rem; }
+
+.form-img {
+  width: 60%;
+  margin-left: auto; }
+
 #main-footer {
   background: #1d2869; }
   #main-footer h1 {
@@ -483,7 +543,9 @@
   .appointment-brands .d-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem; } }
+    grid-gap: 1rem; }
+  .form-img {
+    display: none; } }
 
 @media screen and (max-width: 768px) {
   #main-header-top {
@@ -494,6 +556,8 @@
     display: block; }
   #showcase {
     height: 100vh; }
+  #accounts-form {
+    padding-top: 20vh; }
   #showcase-links {
     height: 55vh; }
     #showcase-links .showcase-box {
@@ -503,7 +567,9 @@
   .appointment-brands .d-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem; } }
+    grid-gap: 1rem; }
+  .form-img {
+    display: none; } }
 
 @media screen and (min-width: 769px) {
   .menu-btn {
