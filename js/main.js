@@ -1,3 +1,23 @@
+// remember-pass-check
+const otpBtn = document.querySelector('#remember-pass-check');
+const inputPass = document.querySelector('.password-input');
+const facebookBtn = document.querySelector('#facebook-btn');
+
+if(otpBtn){
+  otpBtn.addEventListener('change', disableSomeOptions);
+}
+
+function disableSomeOptions(){
+  if(this.checked) {
+    inputPass.disabled = true;
+    facebookBtn.classList.add('disabled');
+} else {
+    // Checkbox is not checked..
+    inputPass.disabled = false;
+    facebookBtn.classList.remove('disabled');
+}
+}
+
 // show menu nav
 const menuShowBtn = document.querySelector('.fa-bars');
 const menuNav = document.querySelector('#menu-nav');
@@ -23,7 +43,9 @@ var searchMenuBtn = document.querySelector('.search-menu-btn');
 var searchMenu = document.querySelector('.search-menu');
 var angleDown = document.querySelector('.fa-angle-down');
 
-searchMenuBtn.addEventListener('click', showSearchMenu);
+if(searchMenuBtn){
+  searchMenuBtn.addEventListener('click', showSearchMenu);
+}
 
 function showSearchMenu(){
   searchMenu.classList.toggle('d-block');
@@ -33,8 +55,10 @@ function showSearchMenu(){
 // get users position longitude and latitude
 
 var getLoc = document.querySelector('.detect-location-btn');
-getLoc.addEventListener('click', getLocation);
+if(getLoc){
+  getLoc.addEventListener('click', getLocation);
 
+}
 var locationInput = document.querySelector('#location');
 
 function getLocation(){
@@ -71,7 +95,9 @@ function getLocation(){
 
 // geo code function to get location when user enter the location in form
 
-locationInput.addEventListener('keyup', geocode);
+if(locationInput){
+  locationInput.addEventListener('keyup', geocode);
+}
 
 var locationResults = document.querySelector('.location-results');
 var searchResults = document.querySelector('.search-results');
@@ -119,11 +145,15 @@ var searchInput = document.querySelector('.search-input');
 var searchReuslts = document.querySelector('.search-results');
 var form = document.querySelector('form');
 
-searchInput.addEventListener('focus', function(){
-  searchReuslts.classList.add('d-block');
-});
+if(searchInput){
+  searchInput.addEventListener('focus', function(){
+    searchReuslts.classList.add('d-block');
+  });
+}
 
-locationResults.addEventListener('click', getLocationResult);
+if(locationResults){
+  locationResults.addEventListener('click', getLocationResult);
+}
 
     function getLocationResult(e){
       if(e.target.classList.contains('search-result')){
@@ -134,7 +164,9 @@ locationResults.addEventListener('click', getLocationResult);
       }
 }
 
-searchResults.addEventListener('click', getSearchResult);
+if(searchResults){
+  searchResults.addEventListener('click', getSearchResult);
+}
 
 function getSearchResult(e){
   if(e.target.classList.contains('search-query-result')){
@@ -148,9 +180,10 @@ function getSearchResult(e){
 
 
 // function for search form when the user click outside of input then search menu and location menu and others menu desappears
-var page = document.querySelector('body');
+var page = document.querySelector('#showcase');
 
-page.addEventListener('click', searchFunc);
+if(page){
+  page.addEventListener('click', searchFunc);
 
 function searchFunc(e){
   
@@ -169,6 +202,8 @@ function searchFunc(e){
   }
 
 }
+}
+
 
 
 // jquery function to get user location without gps
@@ -176,6 +211,9 @@ $.get("https://ipinfo.io", function(response) {
     var address = response.city + ', ' + response.region +', ' + response.country;
     $('#location').val(address);
 }, "jsonp");
+
+
+
 
 
 
@@ -213,13 +251,17 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 
+
+
 // first slider
-let sliderImages = document.querySelectorAll(".slide"),
-  arrowLeft = document.querySelector(".arrow1"),
+
+let slider1 = document.querySelector(".slider1")
+  if(slider1){
+    let sliderImages = document.querySelectorAll(".slide"),
+     arrowLeft = document.querySelector(".arrow1"),
   arrowRight = document.querySelector(".arrow2"),
   current = 0;
-
-// Clear all images
+    // Clear all images
 function reset() {
   for (let i = 0; i < sliderImages.length; i++) {
     sliderImages[i].style.display = "none";
@@ -263,11 +305,15 @@ arrowRight.addEventListener("click", function() {
 });
 
 startSlide();
+  }
 
 
+
+let slider2 = document.querySelector('.slider2');
 
 // chat slider
-var chatslider = chatsliderImages = document.querySelectorAll(".chat-slide"),
+if(slider2){
+  var chatslider = chatsliderImages = document.querySelectorAll(".chat-slide"),
 chatarrowLeft = document.querySelector(".chat-arrow1"),
 chatarrowRight = document.querySelector(".chat-arrow2"),
 chatcurrent = 0;
@@ -317,9 +363,11 @@ chatarrowRight.addEventListener("click", function() {
 
 chatstartSlide();
 
+}
 
-
-// medicines slider
+let slider3 = document.querySelector('.slider3');
+if(slider3){
+  // medicines slider
 var medicineslider = medicinesliderImages = document.querySelectorAll(".medicine-slide"),
 medicinearrowLeft = document.querySelector(".medicine-arrow1"),
 medicinearrowRight = document.querySelector(".medicine-arrow2"),
@@ -370,9 +418,12 @@ medicinearrowRight.addEventListener("click", function() {
 
 medicinestartSlide();
 
+}
 
+let slider4 = document.querySelector('.slider4');
 
-// healthcare slider
+if(slider4){
+  // healthcare slider
 var healthcareslider = healthcaresliderImages = document.querySelectorAll(".healthcare-slide"),
 healthcarearrowLeft = document.querySelector(".healthcare-arrow1"),
 healthcarearrowRight = document.querySelector(".healthcare-arrow2"),
@@ -423,3 +474,4 @@ healthcarearrowRight.addEventListener("click", function() {
 
 healthcarestartSlide();
 
+}
