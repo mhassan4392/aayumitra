@@ -499,7 +499,7 @@
   #accounts-form .fa-facebook {
     font-size: 1.6rem; }
   #accounts-form .card-header {
-    padding-bottom: 3px; }
+    padding-bottom: 5px; }
     #accounts-form .card-header h6 {
       font-weight: bold; }
     #accounts-form .card-header span {
@@ -511,6 +511,11 @@
     font-size: 0.8rem; }
   #accounts-form .terms-text {
     font-size: 0.6rem; }
+  #accounts-form #not-doctor {
+    font-size: 0.8rem; }
+  #accounts-form #join-doctors {
+    font-size: 0.9rem;
+    font-weight: lighter; }
 
 .form-img {
   width: 60%;
