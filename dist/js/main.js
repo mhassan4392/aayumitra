@@ -206,6 +206,9 @@ function searchFunc(e){
 
 
 
+
+
+
 // jquery function to get user location without gps
 $.get("https://ipinfo.io", function(response) {
     var address = response.city + ', ' + response.region +', ' + response.country;

@@ -72,7 +72,7 @@ color: $secondary-clr;
         font-size: 1.6rem;
     }
     .card-header{
-        padding-bottom: 3px;
+        padding-bottom: 5px;
         h6{
             font-weight: bold;
         }
@@ -95,6 +95,14 @@ color: $secondary-clr;
     // .disabled{
     //     pointer-events: none;
     // }
+
+    #not-doctor{
+        font-size: 0.8rem;
+    }
+    #join-doctors{
+        font-size: 0.9rem;
+        font-weight: lighter;
+    }
 }
 
 .form-img{
